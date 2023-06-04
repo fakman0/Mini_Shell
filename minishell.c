@@ -6,7 +6,7 @@ int	main(int argc, char *argv[], char **env)
 
 	while (1)
 	{
-		prompt = readline("\033[1;31myciftci🥵minishell->\033[0m");
+		prompt = readline("\033[1;31myfakman🥵minishell->\033[0m");
 		char **a = lexer(prompt, 0, 0, 0);
 		printf("%s\n", a[0]);
 		printf("%s\n", a[1]);
