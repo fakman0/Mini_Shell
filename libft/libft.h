@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fakman <fakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/19 08:21:19 by fakman            #+#    #+#             */
-/*   Updated: 2023/03/19 08:21:20 by fakman           ###   ########.fr       */
+/*   Created: 2023/06/20 02:28:42 by fakman            #+#    #+#             */
+/*   Updated: 2023/06/20 02:28:43 by fakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 typedef struct s_list
 {
-	void			*content;
+	char			*command;
 	struct s_list	*next;
 }					t_list;
 
@@ -32,9 +32,8 @@ typedef struct s_list
 
 typedef struct s_stack
 {
-	int				num;
-	int				tag;
-	int				index;
+	int				x;
+	int				y;
 	struct s_stack	*next;			
 }				t_stack;
 
@@ -72,16 +71,12 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(char *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void*));
-void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int		ft_strcmp(const char *s1, const char *s2);
 //printf
 int		ft_putchr(char c);
 int		ft_putnbr(int nbr);
@@ -104,8 +99,6 @@ char	*get_new_raw_str(char *raw_str);
 char	*get_next_line(int fd);
 //stack data type functions
 void	ft_stack_push(t_stack **root, t_stack *new);
-t_stack	*ft_stack_new(int num, int tag, int index);
-int		ft_stack_pop(t_stack **root);
-void	ft_stack_clear(t_stack **stack);
-t_stack	*ft_stack_peek(t_stack **stack);
+t_stack	*ft_stack_new(int x, int y);
+t_stack	*ft_stack_pop(t_stack **root);
 #endif
