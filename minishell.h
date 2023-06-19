@@ -12,7 +12,8 @@
 # include "libft/libft.h"
 
 //! LEXER
-char	**lexer(char *prompt, int i, int j, int end);
-int		word_count(char *prompt, int counter, int i, char quotes);
-
+t_list	**lexer(char *prompt, int i, int j, int end);
+//! LEXER UTILS
+char	*allocator(char *ret, char *src, int len);
+void	quotes_skipper(int *i, char *prompt);
 #endif
